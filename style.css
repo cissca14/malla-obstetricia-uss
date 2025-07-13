@@ -53,6 +53,9 @@ h1 {
   color: #555;
 }
 .bloqueado {
-  opacity: 0.4;
+  background-color: #f8f8f8 !important;
+  color: #999 !important;
+  border: 2px dashed #bbb !important;
   pointer-events: none;
+  opacity: 1;
 }
