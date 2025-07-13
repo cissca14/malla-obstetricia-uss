@@ -1,65 +1,48 @@
-const malla = [
-  // SEMESTRE 1
-  { nombre: "Biología Celular", semestre: 1, prerrequisitos: [], tipo: "base" },
-  { nombre: "Morfología Básica", semestre: 1, prerrequisitos: [], tipo: "base" },
-  { nombre: "Química General y Orgánica", semestre: 1, prerrequisitos: [], tipo: "base" },
-  { nombre: "Fundamentos de la Matronería", semestre: 1, prerrequisitos: [], tipo: "profesional" },
-  { nombre: "Salud Mental en el Curso de la Vida", semestre: 1, prerrequisitos: [], tipo: "profesional" },
-
-  // SEMESTRE 2
-  { nombre: "Fisiología - Fisiopatología I", semestre: 2, prerrequisitos: ["Biología Celular"], tipo: "base" },
-  { nombre: "Histomorfología", semestre: 2, prerrequisitos: ["Morfología Básica"], tipo: "base" },
-  { nombre: "Bioquímica General", semestre: 2, prerrequisitos: ["Química General y Orgánica"], tipo: "base" },
-  { nombre: "Salud Digital", semestre: 2, prerrequisitos: [], tipo: "profesional" },
-  { nombre: "Anatomía Aplicada a la Gineco-Obstetricia", semestre: 2, prerrequisitos: ["Morfología Básica"], tipo: "profesional" },
-
-  // SEMESTRE 3
-  { nombre: "Fisiología - Fisiopatología II", semestre: 3, prerrequisitos: ["Fisiología - Fisiopatología I"], tipo: "base" },
-  { nombre: "Salud Pública y Comunidad", semestre: 3, prerrequisitos: [], tipo: "profesional" },
-  { nombre: "Proceso de Atención de Matronería", semestre: 3, prerrequisitos: ["Fundamentos de la Matronería"], tipo: "profesional" },
-  { nombre: "Inmunología", semestre: 3, prerrequisitos: ["Biología Celular"], tipo: "base" },
-  { nombre: "Psicología Evolutiva", semestre: 3, prerrequisitos: [], tipo: "base" },
-
-  // SEMESTRE 4
-  { nombre: "Microbiología y Parasitología", semestre: 4, prerrequisitos: ["Inmunología"], tipo: "base" },
-  { nombre: "Salud Sexual y Reproductiva", semestre: 4, prerrequisitos: ["Proceso de Atención de Matronería"], tipo: "profesional" },
-  { nombre: "Farmacología", semestre: 4, prerrequisitos: ["Bioquímica General"], tipo: "base" },
-  { nombre: "Nutrición y Salud", semestre: 4, prerrequisitos: [], tipo: "base" },
-  { nombre: "Taller de Habilidades Comunicativas", semestre: 4, prerrequisitos: [], tipo: "habilidad" },
-
-  // SEMESTRE 5
-  { nombre: "Embarazo Normal", semestre: 5, prerrequisitos: ["Salud Sexual y Reproductiva"], tipo: "profesional" },
-  { nombre: "Ginecología", semestre: 5, prerrequisitos: ["Salud Sexual y Reproductiva"], tipo: "profesional" },
-  { nombre: "Ecografía", semestre: 5, prerrequisitos: ["Anatomía Aplicada a la Gineco-Obstetricia"], tipo: "profesional" },
-  { nombre: "Salud Infantil I", semestre: 5, prerrequisitos: ["Salud Sexual y Reproductiva"], tipo: "profesional" },
-  { nombre: "Bioestadística", semestre: 5, prerrequisitos: [], tipo: "base" },
-
-  // SEMESTRE 6
-  { nombre: "Embarazo de Alto Riesgo", semestre: 6, prerrequisitos: ["Embarazo Normal"], tipo: "profesional" },
-  { nombre: "Trabajo de Parto y Parto", semestre: 6, prerrequisitos: ["Embarazo Normal"], tipo: "profesional" },
-  { nombre: "Salud Infantil II", semestre: 6, prerrequisitos: ["Salud Infantil I"], tipo: "profesional" },
-  { nombre: "Gestión y Liderazgo en Salud", semestre: 6, prerrequisitos: [], tipo: "profesional" },
-  { nombre: "Taller de Inglés Profesional", semestre: 6, prerrequisitos: [], tipo: "habilidad" },
-
-  // SEMESTRE 7
-  { nombre: "Atención en Puerperio", semestre: 7, prerrequisitos: ["Trabajo de Parto y Parto"], tipo: "profesional" },
-  { nombre: "Neonatología", semestre: 7, prerrequisitos: ["Salud Infantil II"], tipo: "profesional" },
-  { nombre: "Infecciones de Transmisión Sexual", semestre: 7, prerrequisitos: ["Microbiología y Parasitología"], tipo: "profesional" },
-  { nombre: "Investigación en Salud I", semestre: 7, prerrequisitos: ["Bioestadística"], tipo: "base" },
-  { nombre: "Taller Integrador I", semestre: 7, prerrequisitos: ["Trabajo de Parto y Parto", "Embarazo de Alto Riesgo"], tipo: "integrador" },
-
-  // SEMESTRE 8
-  { nombre: "Salud de la Mujer en el Ciclo Vital", semestre: 8, prerrequisitos: ["Ginecología"], tipo: "profesional" },
-  { nombre: "Gestión del Cuidado en Matronería", semestre: 8, prerrequisitos: ["Gestión y Liderazgo en Salud"], tipo: "profesional" },
-  { nombre: "Ética Profesional", semestre: 8, prerrequisitos: [], tipo: "habilidad" },
-  { nombre: "Investigación en Salud II", semestre: 8, prerrequisitos: ["Investigación en Salud I"], tipo: "base" },
-  { nombre: "Taller Integrador II", semestre: 8, prerrequisitos: ["Taller Integrador I"], tipo: "integrador" },
-
-  // SEMESTRE 9
-  { nombre: "Internado Clínico I", semestre: 9, prerrequisitos: ["Taller Integrador II"], tipo: "internado" },
-  { nombre: "Gestión en Red Asistencial", semestre: 9, prerrequisitos: ["Gestión del Cuidado en Matronería"], tipo: "profesional" },
-
-  // SEMESTRE 10
-  { nombre: "Internado Clínico II", semestre: 10, prerrequisitos: ["Internado Clínico I"], tipo: "internado" },
-  { nombre: "Examen de Título", semestre: 10, prerrequisitos: ["Internado Clínico II"], tipo: "evaluación" }
+const ramos = [
+  {"nombre": "Biología Celular", "semestre": 1, "prerrequisitos": []},
+  {"nombre": "Morfología Básica", "semestre": 1, "prerrequisitos": []},
+  {"nombre": "Química General y Orgánica", "semestre": 1, "prerrequisitos": []},
+  {"nombre": "Fundamentos de la Matronería", "semestre": 1, "prerrequisitos": []},
+  {"nombre": "Salud Mental en el Curso de la Vida", "semestre": 1, "prerrequisitos": []},
+  {"nombre": "Fisiología - Fisiopatología I", "semestre": 2, "prerrequisitos": ["Biología Celular", "Morfología Básica"]},
+  {"nombre": "Histomorfología", "semestre": 2, "prerrequisitos": ["Biología Celular"]},
+  {"nombre": "Bioquímica General", "semestre": 2, "prerrequisitos": ["Química General y Orgánica"]},
+  {"nombre": "Salud Digital", "semestre": 2, "prerrequisitos": []},
+  {"nombre": "Anatomía Aplicada a la Gineco-Obstetricia", "semestre": 2, "prerrequisitos": ["Morfología Básica"]},
+  {"nombre": "Fisiología - Fisiopatología II", "semestre": 3, "prerrequisitos": ["Fisiología - Fisiopatología I"]},
+  {"nombre": "Microbiología", "semestre": 3, "prerrequisitos": ["Biología Celular", "Química General y Orgánica"]},
+  {"nombre": "Neuroanatomía", "semestre": 3, "prerrequisitos": ["Morfología Básica"]},
+  {"nombre": "Farmacología General", "semestre": 3, "prerrequisitos": ["Bioquímica General", "Fisiología - Fisiopatología I"]},
+  {"nombre": "Salud Pública y APS", "semestre": 3, "prerrequisitos": []},
+  {"nombre": "Género y Salud Sexual y Reproductiva", "semestre": 3, "prerrequisitos": []},
+  {"nombre": "Embriología", "semestre": 4, "prerrequisitos": ["Morfología Básica"]},
+  {"nombre": "Genética Humana", "semestre": 4, "prerrequisitos": ["Biología Celular"]},
+  {"nombre": "Farmacología Aplicada", "semestre": 4, "prerrequisitos": ["Farmacología General"]},
+  {"nombre": "Epidemiología", "semestre": 4, "prerrequisitos": ["Salud Pública y APS"]},
+  {"nombre": "Promoción de la Salud", "semestre": 4, "prerrequisitos": ["Salud Pública y APS"]},
+  {"nombre": "Taller Integrador de la Matronería", "semestre": 4, "prerrequisitos": ["Fundamentos de la Matronería"]},
+  {"nombre": "Salud Sexual y Reproductiva I", "semestre": 5, "prerrequisitos": ["Género y Salud Sexual y Reproductiva"]},
+  {"nombre": "Atención en el Embarazo I", "semestre": 5, "prerrequisitos": ["Embriología", "Genética Humana"]},
+  {"nombre": "Partería I", "semestre": 5, "prerrequisitos": ["Embriología"]},
+  {"nombre": "Investigación en Salud", "semestre": 5, "prerrequisitos": ["Epidemiología"]},
+  {"nombre": "Clínica Obstétrica I", "semestre": 5, "prerrequisitos": ["Fundamentos de la Matronería"]},
+  {"nombre": "Salud Sexual y Reproductiva II", "semestre": 6, "prerrequisitos": ["Salud Sexual y Reproductiva I"]},
+  {"nombre": "Atención en el Embarazo II", "semestre": 6, "prerrequisitos": ["Atención en el Embarazo I"]},
+  {"nombre": "Partería II", "semestre": 6, "prerrequisitos": ["Partería I"]},
+  {"nombre": "Clínica Obstétrica II", "semestre": 6, "prerrequisitos": ["Clínica Obstétrica I"]},
+  {"nombre": "Taller de Inglés Profesional", "semestre": 6, "prerrequisitos": []},
+  {"nombre": "Atención en Puerperio", "semestre": 7, "prerrequisitos": ["Partería II"]},
+  {"nombre": "Neonatología", "semestre": 7, "prerrequisitos": ["Embriología", "Clínica Obstétrica II"]},
+  {"nombre": "Infecciones de Transmisión Sexual", "semestre": 7, "prerrequisitos": ["Microbiología"]},
+  {"nombre": "Investigación en Salud I", "semestre": 7, "prerrequisitos": ["Investigación en Salud"]},
+  {"nombre": "Taller Integrador I", "semestre": 7, "prerrequisitos": ["Clínica Obstétrica II"]},
+  {"nombre": "Salud de la Mujer en el Ciclo Vital", "semestre": 8, "prerrequisitos": ["Salud Sexual y Reproductiva II"]},
+  {"nombre": "Gestión del Cuidado en Matronería", "semestre": 8, "prerrequisitos": ["Clínica Obstétrica II"]},
+  {"nombre": "Ética Profesional", "semestre": 8, "prerrequisitos": []},
+  {"nombre": "Investigación en Salud II", "semestre": 8, "prerrequisitos": ["Investigación en Salud I"]},
+  {"nombre": "Taller Integrador II", "semestre": 8, "prerrequisitos": ["Taller Integrador I"]},
+  {"nombre": "Internado Clínico I", "semestre": 9, "prerrequisitos": ["Taller Integrador II"]},
+  {"nombre": "Gestión en Red Asistencial", "semestre": 9, "prerrequisitos": ["Gestión del Cuidado en Matronería"]},
+  {"nombre": "Internado Clínico II", "semestre": 10, "prerrequisitos": ["Internado Clínico I"]},
+  {"nombre": "Examen de Título", "semestre": 10, "prerrequisitos": ["Internado Clínico II"]},
 ];
