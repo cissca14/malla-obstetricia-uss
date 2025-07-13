@@ -1,3 +1,4 @@
+
 const malla = document.getElementById('malla');
 const avance = document.getElementById('avance');
 
