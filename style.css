@@ -1,0 +1,65 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff6fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #e8c7e8;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h1 {
+  color: #93278f;
+  margin: 0;
+}
+#avance {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+#malla {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+.semestre {
+  background: #ffe0f0;
+  border-radius: 10px;
+  padding: 1rem;
+  min-width: 280px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+.semestre h2 {
+  background-color: #fbe7f2;
+  color: #c71585;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+.ramo {
+  background: #fff;
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+  border-left: 6px solid #c69;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.ramo:hover {
+  background: #fdf0f5;
+}
+.ramo.aprobado {
+  background: #d1fcd3;
+  border-left-color: #4caf50;
+}
+.formacion-disciplinar { border-left-color: #f9a1bc; }
+.formacion-profesional { border-left-color: #b39ddb; }
+.formacion-identidad { border-left-color: #a5d6a7; }
+.gestion-empleabilidad { border-left-color: #ffe082; }
