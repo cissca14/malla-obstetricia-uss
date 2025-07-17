@@ -125,8 +125,10 @@ function actualizarProgreso() {
   const total = ramos.length;
   const completados = aprobados.length;
   const porcentaje = Math.round((completados / total) * 100);
+  const texto = `Avance: ${porcentaje}% (${completados} de ${total} ramos aprobados)`;
+
   document.getElementById("barra").style.width = porcentaje + "%";
-  document.getElementById("porcentaje").textContent = "Avance: " + porcentaje + "%";
+  document.getElementById("porcentaje").textContent = texto;
 }
 
 crearMalla();
