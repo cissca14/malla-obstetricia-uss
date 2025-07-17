@@ -72,11 +72,12 @@ const ramos = [
   { nombre: "Electivo II", semestre: 10, tipo: "identidad" }
 ];
 
-// Cargar estado guardado
 let aprobados = JSON.parse(localStorage.getItem("aprobados")) || [];
 
 function crearMalla() {
   const contenedor = document.querySelector(".semestres-container");
+  contenedor.innerHTML = "";
+
   for (let s = 1; s <= 10; s++) {
     const div = document.createElement("div");
     div.classList.add("semestre");
@@ -93,7 +94,6 @@ function crearMalla() {
           btn.classList.add("aprobado");
         }
 
-        // Si tiene prerrequisitos y no están todos aprobados
         if (
           ramo.prereqs &&
           !ramo.prereqs.every(pr => aprobados.includes(pr))
@@ -106,6 +106,8 @@ function crearMalla() {
       });
     contenedor.appendChild(div);
   }
+
+  actualizarProgreso();
 }
 
 function toggleRamo(nombre) {
@@ -116,8 +118,15 @@ function toggleRamo(nombre) {
     aprobados.push(nombre);
   }
   localStorage.setItem("aprobados", JSON.stringify(aprobados));
-  document.querySelector(".semestres-container").innerHTML = "";
   crearMalla();
+}
+
+function actualizarProgreso() {
+  const total = ramos.length;
+  const completados = aprobados.length;
+  const porcentaje = Math.round((completados / total) * 100);
+  document.getElementById("barra").style.width = porcentaje + "%";
+  document.getElementById("porcentaje").textContent = "Avance: " + porcentaje + "%";
 }
 
 crearMalla();
