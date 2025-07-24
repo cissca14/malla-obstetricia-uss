@@ -24,7 +24,7 @@ const ramos = [
 
   // --- 4° SEMESTRE ---
   { nombre: "Fisiología Obstétrica y Neonatal", semestre: 4, tipo: "disciplinar", prereqs: ["Integrado de Fisiología - Fisiopatología II"] },
-  { nombre: "Fisiología Ginecológica y Sexual en el Curso de la Vida", semestre: 4, tipo: "disciplinar", prereqs: ["Integrado de Fisiología - Fisiopatología I", "Microbiología medica"] },
+  { nombre: "Fisiología Ginecológica y Sexual en el Curso de la Vida", semestre: 4, tipo: "disciplinar", prereqs: ["Integrado de Fisiología - Fisiopatología I", "Microbiología Medica"] },
   { nombre: "Salud Poblacional", semestre: 4, tipo: "disciplinar" },
   { nombre: "Farmacología General", semestre: 4, tipo: "disciplinar", prereqs: ["Integrado de Fisiología - Fisiopatología I"] },
   { nombre: "Ética", semestre: 4, tipo: "identidad", prereqs: ["Antropología"] },
